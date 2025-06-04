@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SpeedKey - Typing Trainer</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+    }
+
+    header {
+      background-color: #007BFF;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(to right, #007BFF, #00bfff);
+      color: white;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+
+    .hero button {
+      padding: 15px 30px;
+      font-size: 1rem;
+      background-color: #fff;
+      color: #007BFF;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    .hero button:hover {
+      background-color: #f0f0f0;
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 40px 20px;
+      gap: 20px;
+      background-color: #ffffff;
+    }
+
+    .feature {
+      flex: 1 1 250px;
+      background-color: #f1f1f1;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .feature h3 {
+      color: #007BFF;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #e9ecef;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    @media (max-width: 600px) {
+      .hero h2 {
+        font-size: 2rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>SpeedKey</h1>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#start">Get Started</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Boost Your Typing Speed Today!</h2>
+    <p>Practice with real-time feedback, track your progress, and become a typing pro with SpeedKey.</p>
+    <button onclick="window.location.href='#start'">Start Typing</button>
+  </section>
+
+  <section id="features" class="features">
+    <div class="feature">
+      <h3>Real-Time Feedback</h3>
+      <p>Instant accuracy and speed tracking to help you improve every session.</p>
+    </div>
+    <div class="feature">
+      <h3>Progress Reports</h3>
+      <p>Visual stats and history so you can see how far you've come.</p>
+    </div>
+    <div class="feature">
+      <h3>Custom Lessons</h3>
+      <p>Choose topics or upload your own texts to practice exactly what you need.</p>
+    </div>
+  </section>
+
+  <footer id="contact">
+    &copy; 2025 SpeedKey. All rights reserved.
+  </footer>
+
+</body>
+</html>
