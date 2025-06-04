@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Results - i3 Typing Master</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        body {
+            background: #f7f7f7;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .results-container {
+            max-width: 600px;
+            margin: 40px auto;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            padding: 32px 28px 24px 28px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 24px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 18px;
+        }
+        th, td {
+            padding: 10px 8px;
+            text-align: center;
+        }
+        th {
+            background: #0078d7;
+            color: #fff;
+        }
+        tr:nth-child(even) {
+            background: #f0f4fa;
+        }
+        tr:nth-child(odd) {
+            background: #fff;
+        }
+        .no-results {
+            text-align: center;
+            color: #888;
+            margin: 30px 0;
+        }
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 18px;
+            color: #0078d7;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="results-container">
+        <h2>Your Typing Test Results</h2>
+        <table id="resultsTable">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>WPM</th>
+                    <th>Accuracy (%)</th>
+                </tr>
+            </thead>
+            <tbody id="resultsBody">
+                <!-- Results will be inserted here -->
+            </tbody>
+        </table>
+        <div class="no-results" id="noResults" style="display:none;">
+            No test results found. Take a typing test to see your results!
+        </div>
+        <a href="typing-test.html" class="back-link">Take Another Test</a>
+    </div>
+    <script>
+        // Example: Load results from localStorage (simulate real data)
+        function loadResults() {
+            const results = JSON.parse(localStorage.getItem("typingResults") || "[]");
+            const tbody = document.getElementById("resultsBody");
+            const noResults = document.getElementById("noResults");
+            tbody.innerHTML = "";
+
+            if (results.length === 0) {
+                noResults.style.display = "block";
+                return;
+            } else {
+                noResults.style.display = "none";
+            }
+
+            results.slice().reverse().forEach(result => {
+                const tr = document.createElement("tr");
+                tr.innerHTML = `
+                    <td>${result.date}</td>
+                    <td>${result.wpm}</td>
+                    <td>${result.accuracy}</td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        // For demonstration, add a sample result if none exist
+        if (!localStorage.getItem("typingResults")) {
+            localStorage.setItem("typingResults", JSON.stringify([
+                { date: "2025-06-04", wpm: 52, accuracy: 97 }
+            ]));
+        }
+
+        loadResults();
+    </script>
+</body>
+</html>
