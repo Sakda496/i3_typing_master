@@ -1,0 +1,62 @@
+// Validate password confirmation
+        const confirmPassword = confirmPasswordInput.value;
+        if (password !== confirmPassword) {
+          showError("confirmError", "Passwords do not match");
+          isValid = false;
+        }
+
+        // Validate terms
+        const terms = document.getElementById("terms").checked;
+        if (!terms) {
+          alert("Please accept the Terms of Service and Privacy Policy");
+          isValid = false;
+        }
+
+        if (isValid) {
+          // Simulate successful registration
+          const submitBtn = document.querySelector(".submit-btn");
+          submitBtn.innerHTML = "Creating Account...";
+          submitBtn.disabled = true;
+
+          setTimeout(() => {
+            alert("Account created successfully! Welcome to TypingMaster!");
+            form.reset();
+            strengthFill.className = "strength-fill";
+            submitBtn.innerHTML = "Create Account";
+            submitBtn.disabled = false;
+          }, 2000);
+        }
+      });
+
+      function showError(elementId, message) {
+        const errorElement = document.getElementById(elementId);
+        errorElement.textContent = message;
+        errorElement.classList.add("show");
+      }
+
+      // Add input animations
+      document.querySelectorAll("input").forEach((input) => {
+        input.addEventListener("focus", function () {
+          this.parentElement.style.transform = "scale(1.02)";
+        });
+
+        input.addEventListener("blur", function () {
+          this.parentElement.style.transform = "scale(1)";
+        });
+      });
+
+      // Mock functions for navigation
+      function goToLogin() {
+        alert("Redirecting to login page...");
+      }
+
+      function showTerms() {
+        alert("Terms of Service would be displayed here");
+      }
+
+      function showPrivacy() {
+        alert("Privacy Policy would be displayed here");
+      }
+    </script>
+  </body>
+</html>
